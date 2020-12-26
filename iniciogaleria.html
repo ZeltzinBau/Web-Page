@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title> Galería TAL1 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Galería TAL 1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../CONFIGURACION/configuracion.css">
+    <script  src="../CONFIGURACION/configuracionjs.js"></script>
+
+    <style>
+
+        body, html {
+          height: 100%;
+          margin: 0;
+          font-family: Gill Sans MT, sans-serif;
+        }
+
+
+        .hero-text {
+          text-decoration: none;
+          text-align: left;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-90%, -60%);
+          color: white;
+        }
+
+        .container {
+          position: relative;
+          width: 100%;
+          opacity: 10;
+        }
+
+        .image {
+          opacity: 1;
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .overlay {
+          opacity: 10;
+          text-decoration: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #A6FB75;
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .8s ease;
+        }
+
+        .overlay2 {
+          opacity: 10;
+          text-decoration: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #0039CB;
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .8s ease;
+        }
+
+        .container:hover .overlay {
+          width: 100%;
+          opacity: 10;
+        }
+
+        .container:hover .overlay2 {
+          width: 100%;
+          opacity: 10;
+        }
+
+        .text {
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          font-size: 60px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+        }
+
+        .hero-image {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Fotos/portadainicio.jpg" );
+          height: 100%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+          
+
+
+    </style>
+</head>
+<body>
+
+  <div id="navbar">
+   
+   <img src="../CONFIGURACION/FOTOS/TALLOGO2.png" alt="logo" class="logo" id="logo"> 
+
+  <div id="navbar-right">
+    <br><br>
+
+    <a  href="../index.html">Home</a>
+    <a  href="../MEET THE TEAM/meettheteam.html">Meet the team</a>
+    <a class="active" href="#about">Galería</a>
+    <a href="../CONTACTANOS/contactanos.html">Contáctanos</a>
+  </div>
+  </div>
+
+<!-- Encabezado e información sobre la galería-->
+    <div class="hero-image">
+      <div class="hero-text">
+
+        <h1 style="font-size:70px">Galería</h1>
+
+        <p style="font-size:25px" "font-family:Helvetica">
+        Da un vistazo a nuestra trayectoría y recuerdos. La siguiente galería muestra todos nuestros logros, derrotas y aventuras en los últimos años.  </p><br>  
+
+        <p style="font-size:25px" "font-family:Helvetica"> 
+        Haz clic sobre la temporada en la que te gustaría explorar </p>
+
+      </div>
+    </div>
+
+<!-- Enlace para acceder a la galería -->
+        <a href="GALERIATT/TOWERTAKEOVERGALERIA.html" style="text-decoration:none" "font-family:Abadi">
+        <div class="container">
+          <img src="Fotos/tower.jpeg" alt="fondoverde" class="image">
+          <div class="overlay">
+            <div class="text">
+
+              <font color="#FFFFFF">
+                TOWER TAKEOVER <br> 
+                2019-2020
+              </font>
+               
+            </div>
+          </div>
+        </div></a> 
+
+        <a href="GALERIATP/TURNINGPOINTGALERIA.html" style="text-decoration:none" "font-family:Abadi">
+        <div class="container">
+          <img src="Fotos/turning2.jpg" alt="fondoverde" class="image">
+          <div class="overlay2">
+            <div class="text">
+
+              <font color="#FFFFFF">
+                TURNING POINT <br> 
+                2018-2019
+              </font>
+               
+            </div>
+          </div>
+        </div></a> 
+
+</body>
+<!-- Fin del progrma-->
+</html>
