@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="en"> <!-- Fuente raíz -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Galería temporada 2018-2019 Turning Point TAL1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title> TURNING POINT </title>
+<script src="funciones.js"> </script>
+<link rel="stylesheet" href="bloque.css">
+<link rel="stylesheet" type="text/css" href="../../CONFIGURACION/configuracion.css">
+<script  src="../../CONFIGURACION/configuracionjs.js"></script>
+<style>
+
+body {
+  font-family: Calibri, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #4277FF;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #A6FB75;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 9px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #7FC2FF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #A6FB75;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #A6FB75;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #A6FB75;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body, html {
+          height: 100%;
+          margin: 0;
+          color: white;
+
+        }
+
+</style>
+
+<body>
+
+  
+
+  <h1 style="text-align:center"> Turning Point <br> 2018-2019 </h1>
+
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/regionalp.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/equipom.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/nacional.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/equipo2.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/premio1.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/nacional2.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/nacional3.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial1.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/local1.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/local2.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/local3.png" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial2.jpg" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/taller1.jpg" style="width:100%" onclick="openModal();currentSlide(13)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/taller2.jpg" style="width:100%" onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/taller3.jpg" style="width:100%" onclick="openModal();currentSlide(15)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/taller4.jpg" style="width:100%" onclick="openModal();currentSlide(16)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/robot1.jpg" style="width:100%" onclick="openModal();currentSlide(17)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial3.jpg" style="width:100%" onclick="openModal();currentSlide(18)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial5.jpg" style="width:100%" onclick="openModal();currentSlide(19)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial4.jpg" style="width:100%" onclick="openModal();currentSlide(20)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="TURNING POINT/taller5.jpg" style="width:100%" onclick="openModal();currentSlide(21)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial8.jpg" style="width:100%" onclick="openModal();currentSlide(22)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial6.jpg" style="width:100%" onclick="openModal();currentSlide(23)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="TURNING POINT/mundial7.png" style="width:100%" onclick="openModal();currentSlide(24)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+
+
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 24</div>
+        <img src="TURNING POINT/regional.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 24</div>
+        <img src="TURNING POINT/equipo.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 24</div>
+        <img src="TURNING POINT/nacional.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">4 / 24</div>
+        <img src="TURNING POINT/equipo2.png" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 24</div>
+        <img src="TURNING POINT/premio1.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 24</div>
+        <img src="TURNING POINT/nacional2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">7 / 24</div>
+        <img src="TURNING POINT/nacional3.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">8 / 24</div>
+        <img src="TURNING POINT/mundial1.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">9 / 24</div>
+        <img src="TURNING POINT/local1.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">10 / 24</div>
+        <img src="TURNING POINT/local2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">11 / 24</div>
+        <img src="TURNING POINT/local3.png" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">12 / 24</div>
+        <img src="TURNING POINT/mundial2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">13 / 24</div>
+        <img src="TURNING POINT/taller1.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">14 / 24</div>
+        <img src="TURNING POINT/taller2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">15 / 24</div>
+        <img src="TURNING POINT/taller3.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">16 / 24</div>
+        <img src="TURNING POINT/taller4.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">17 / 24</div>
+        <img src="TURNING POINT/robot1.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">18 / 24</div>
+        <img src="TURNING POINT/mundial3.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">19 / 24</div>
+        <img src="TURNING POINT/mundial5.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">20 / 24</div>
+        <img src="TURNING POINT/mundial4.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">21 / 24</div>
+        <img src="TURNING POINT/taller5.jpg" style="width: 100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">22 / 24</div>
+        <img src="TURNING POINT/mundial8.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">23 / 24</div>
+        <img src="TURNING POINT/mundial6.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">24 / 24</div>
+        <img src="TURNING POINT/mundial7.png" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/regionalp.jpg" style="width:100%" onclick="currentSlide(1)" alt="1er torneo de Turning Point">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/equipom.jpg" style="width:100%" onclick="currentSlide(2)" alt="Equipo temporada 2018-2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/nacional.jpg" style="width:100%" onclick="currentSlide(3)" alt="Nacional 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/equipo2.png" style="width:100%" onclick="currentSlide(4)" alt="Primera parada del mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/premio1.jpg" style="width:100%" onclick="currentSlide(5)" alt="Campeones de excelencia, Cd. Victoria 2018">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/nacional2.jpg" style="width:100%" onclick="currentSlide(6)" alt="Campeones de construcción con pase al mundial">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/nacional3.jpg" style="width:100%" onclick="currentSlide(7)" alt="Robots nacional 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial1.jpg" style="width:100%" onclick="currentSlide(8)" alt="Mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/local1.jpg" style="width:100%" onclick="currentSlide(9)" alt="Campeones del Torneo 2018">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/local2.jpg" style="width:100%" onclick="currentSlide(10)" alt="Torneo en el colegio Columbia 2018">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/local3.png" style="width:100%" onclick="currentSlide(11)" alt="El bocho">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial2.jpg" style="width:100%" onclick="currentSlide(12)" alt="Mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/taller1.jpg" style="width:100%" onclick="currentSlide(13)" alt="José Luis en el taller de robótica">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/taller2.jpg" style="width:100%" onclick="currentSlide(14)" alt="Diego al principio de la temporada ">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/taller3.jpg" style="width:100%" onclick="currentSlide(15)" alt="Problemas de construcción">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/taller4.jpg" style="width:100%" onclick="currentSlide(16)" alt="Arellano ajustando detalles">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/robot1.jpg" style="width:100%" onclick="currentSlide(17)" alt="Diseños de Jaime">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial3.jpg" style="width:100%" onclick="currentSlide(18)" alt="La UT en el mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial5.jpg" style="width:100%" onclick="currentSlide(19)" alt="Moises en el mundial">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial4.png" style="width:100%" onclick="currentSlide(20)" alt="Mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/taller5.jpg" style="width:100%" onclick="currentSlide(21)" alt="Practicando">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial8.jpg" style="width:100%" onclick="currentSlide(22)" alt="Participación en el mundial">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial6.jpg" style="width:100%" onclick="currentSlide(23)" alt="Más del mundial 2019">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="TURNING POINT/mundial7.png" style="width:100%" onclick="currentSlide(24)" alt="Segunda parada en el mundial 2019">
+        </div>
+    </div>
+  </div>
+
+
+
+
+    
+</body>
+</html>
