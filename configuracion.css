@@ -1,0 +1,293 @@
+h1 { font-family: Gill Sans MT}
+
+.titulo{
+ font-size:50;
+ font-family: Gill Sans MT;
+ color: black;
+}
+/* Create a sticky/fixed navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0%; /* At the top */
+  z-index: 99;
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Calibri;
+  line-height: 35px;
+  border-radius: 4px;
+
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 5px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  background-color: #A6FB75;
+  color: black;
+}
+
+/* Style the active/current link */
+#navbar a.active {
+  background-color: #0039CB;
+  color: white;
+}
+
+/* Display some links to the right */
+#navbar-right {
+  float: right;
+}
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+
+.hero-text {
+          text-decoration: none;
+          text-align: left;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-90%, -60%);
+          color: white;
+        }
+
+        .hero-text2 {
+          text-decoration: none;
+          text-align: justify;
+          position: absolute;
+          top: 80%;
+          left: 48%;
+          transform: translate(-90%, -60%);
+          color: white;
+        }
+
+        .container {
+          position: relative;
+          width: 100%;
+          opacity: 10;
+        }
+
+        .image {
+          opacity: 1;
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .logo
+         {
+           border-radius: 80%;
+           width:8%;
+         }
+
+        .overlay {
+          opacity: 10;
+          text-decoration: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #A6FB75;
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .8s ease;
+        }
+
+        .overlay2 {
+          opacity: 10;
+          text-decoration: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #0039CB;
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .8s ease;
+        }
+
+        .container:hover .overlay {
+          width: 100%;
+          opacity: 10;
+        }
+
+        .container:hover .overlay2 {
+          width: 100%;
+          opacity: 10;
+        }
+
+        .text {
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          font-size: 150px;
+          position: absolute;
+          font-family: Gill Sans MT;
+          top: 60%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+        }
+
+        .text2 {
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          font-size: 60px;
+          position: absolute;
+          font-family: Gill Sans MT;
+          top: 60%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+        }
+
+        .hero-image {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Fotos/portada2.jpg" );
+          height: 100%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+
+        .hero-image2 {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Fotos/portada3.jpeg" );
+          height: 93%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+
+        .hero-image3 {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../PROGRAMACION/principalprogramacion/imagenes/10.jpg" );
+          height: 63%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+
+        .hero-image4 {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Fotos/construccion2.jpg" );
+          height: 73%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+
+        .hero-image5 {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Fotos/diseño2.jpg" );
+          height: 73%;
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+
+        /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Instagram */
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 10px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Calibri;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#robot24 {
+  top: 200px;
+  background-color: #0039CB;
+}
+
+#isometricos {
+  top: 260px;
+  background-color: #4277FF;
+}
+
+#animaciones {
+  top: 320px;
+  background-color: #7FC2FF;
+}
+
+#robot15 {
+  top: 380px;
+  background-color: #A6FB75;
+}
+
+
+
+
+
