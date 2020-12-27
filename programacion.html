@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title> PROGRAMACIÓN TAL1 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Programación TAL 1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../CONFIGURACION/configuracion.css">
+<script  src="../../CONFIGURACION/configuracionjs.js"></script>
+
+<style type="text/css">
+	body, html {
+          height: 100%;
+          margin: auto;
+        }
+
+     body{
+     	background-color: #0039CB;
+  		  padding: 0px;
+  		  font-family: Helvetica;
+     }
+
+        h1 {
+  		font-size: 50px;
+  		word-break: break-all;
+  		color:#0039CB;
+		}
+
+    h2{
+      font-family: Abadi;
+      color:#33DE00;
+    }
+
+    .pre1{overflow:auto;
+
+
+    	}
+	.adapt{white-space:pre-wrap;
+		}
+
+	.main {
+ 	 max-width: 1000px;
+ 	 margin: auto;
+	}
+
+	.content {
+  background-color:  #f1f1f1;
+  padding: 10px;
+
+}
+
+p{
+	font-family: Helvetica; 
+	font-size: 12;
+	text-align: justify;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="navbar">   
+    <img src="../../CONFIGURACION/FOTOS/TALLOGO2.png" alt="logo" class="logo" id="logo">  
+    <div id="navbar-right">
+  	<br><br>
+    <a  href="../../index.html">Home</a>
+    </div>
+    </div>
+	
+
+<div class="main">
+<div class="content">
+<br><br><br><br><br><br>
+<h1>Programación</h1>
+<hr>
+
+
+	<h2> Driver Control <br> Base </h2>
+	<p> El código se divide en distintas secciones, la primera corresponde a las multitasks para el Driver Control. Se realiza mediante tasks, debido a que de esta manera se pueden llevar a cabo distintas funciones o tareas a la vez sin que interfieran una con la otra. <br> En el primer recuadro se encuentra la task para la base del control, se realiza mediante condicionales (if/else) para determinar cuando se deben activar los motores, en este caso depende del movimiento de los Axis. </p>
+	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+		///////////Driver Control////////////  
+                    ////////////Base/////////////
+  int Base(){  
+    while(1){
+      if(abs(Controller1.Axis3.value())>20){
+          BI1.spin(directionType::fwd, Controller1.Axis3.value(),velocityUnits::pct);
+          BI2.spin(directionType::fwd, Controller1.Axis3.value(),velocityUnits::pct);
+          BI3.spin(directionType::fwd, Controller1.Axis3.value(),velocityUnits::pct);
+      }
+      else{
+          BI1.stop(brakeType::brake);
+          BI2.stop(brakeType::brake);
+          BI3.stop(brakeType::brake);
+      }
+      
+       if(abs(Controller1.Axis2.value())>20){
+          BD1.spin(directionType::fwd, Controller1.Axis2.value(),velocityUnits::pct);
+          BD2.spin(directionType::fwd, Controller1.Axis2.value(),velocityUnits::pct);
+          BD3.spin(directionType::fwd, Controller1.Axis2.value(),velocityUnits::pct);
+      }
+      else{
+          BD1.stop(brakeType::brake);
+          BD2.stop(brakeType::brake);
+          BD3.stop(brakeType::brake);
+          
+      } 
+    } //while
+  } //Base
+  </textarea>
+  </pre></code>
+
+  <h2> Rodillos </h2>
+  <p> La Task para los rodillos, es parecida a la base. Sin embargo, difiere en que se utiliza un valor dígital como condiconal para activar o no el motor del rodillo. </p>
+  	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+		///////////Rodillos/////////////
+int Rodillo(){ 
+    int RodilloSpeedPCT=85;
+      while(1){
+              if (Controller1.ButtonR2.pressing()){
+                  Rodillos.spin(directionType::fwd,RodilloSpeedPCT,velocityUnits::pct);      
+              }
+
+              else if (Controller1.ButtonL2.pressing()){
+                  Rodillos.spin(directionType::rev,RodilloSpeedPCT,velocityUnits::pct);
+              }
+          else{
+                  Rodillos.stop(brakeType::coast);
+        }
+          vex::task::sleep(20);
+      } //while 
+    } //Rodillo
+</textarea>
+</pre></code>
+
+<h2> Intake </h2>
+<p> En la Task del intake también se utiliza un valor dígital como condiconal para activar o no los motores del intake. </p>
+	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+						////////////Intake/////////////
+	int Intake(){ 
+     int IntakeSpeedPCT=90;
+      while(1){
+              if (Controller1.ButtonR1.pressing()){
+                  IntakeD.spin(directionType::fwd,IntakeSpeedPCT,velocityUnits::pct);
+                  IntakeI.spin(directionType::fwd,IntakeSpeedPCT,velocityUnits::pct);
+              }
+              else if (Controller1.ButtonL1.pressing()){
+                  IntakeD.spin(directionType::rev,IntakeSpeedPCT,velocityUnits::pct);
+                  IntakeI.spin(directionType::rev,IntakeSpeedPCT,velocityUnits::pct);
+              }
+              else{
+                  IntakeD.stop(brakeType::coast);
+                  IntakeI.stop(brakeType::coast);
+        }
+            vex::task::sleep(20);
+      } //while
+    } //Intake 
+	</textarea>
+	</pre></code>
+    <h2> User Control y Main  </h2>
+    <p> En la sección del código User control, se mandan a llamar las 3 tasks programadas anteiormente. Estás se ejecutarán durante el período Driver de la competencia <br> Por otro lado en main, el cual es el programa principal, se mandan llamar las secciones principales (pre-auton,autonomous,usercontrol), es necesario realizar esto para que todo funcioné correctamente en la competencia </p>
+    <pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+	void usercontrol (void){
+    vex::task t1 (Base);
+    vex::task t2 (Intake);
+    vex::task t3 (Rodillo);
+	}//usercontrol
+
+	int main() {
+    
+     pre_auton();
+     Competition.autonomous(autonomous);
+     Competition.drivercontrol(usercontrol);
+            
+    while(1){
+         vex::task::sleep(100);   
+    }
+	}
+	</textarea>
+	</pre></code>
+
+	<h2> Funciones para autónomo <br> Avanzar utilizando encoders  </h2>
+	<p> Para la parte de autónomo en la competencia, se utilizan funciones y tareas, que en términos sencillos se pueden describir como lo que le dice al robot que hacer. Esto es gracias a los sensores, que miden su entorno. <br>La primer función consiste en utilizar los encoders internos de cada motor de la base, para desplazarse hacía adelante. </p>
+	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+		///////////Encoders/////////
+                              ///////////Base/////////
+                           ///// Avanza utilizando encoders////
+void encoadelante (float dist,int por)
+    {
+      BI1.resetRotation();
+      BI2.resetRotation();
+      BI3.resetRotation();
+      BD1.resetRotation();
+      BD2.resetRotation();////Los valores de los encoders internos se igualan a 0
+      BD3.resetRotation();
+    
+      double circumference = 10.16 * M_PI; ////se calcula la circunferencia de la llanta  
+      double degreesToRotate = (360 * dist) / circumference;///se calcula los grados de rotación de acuerdo a la distancia que se quiere recorrer
+    
+      BI1.setVelocity(por, velocityUnits::pct); 
+      BI2.setVelocity(por, velocityUnits::pct); 
+      BI3.setVelocity(por, velocityUnits::pct);
+      BD1.setVelocity(por,velocityUnits::pct); 
+      BD2.setVelocity(por, velocityUnits::pct);//se asigna la velocidad a los motores 
+      BD3.setVelocity(por, velocityUnits::pct); 
+        
+      BI1.startRotateFor(degreesToRotate, rotationUnits::deg); 
+      BI2.startRotateFor(degreesToRotate,rotationUnits::deg); 
+      BI3.startRotateFor(degreesToRotate, rotationUnits::deg); 
+      BD1.startRotateFor(degreesToRotate, rotationUnits::deg);
+      BD2.startRotateFor(degreesToRotate,rotationUnits::deg);/////comienza a rotar de acuerdo a los grados que han sido calculados
+      BD3.startRotateFor(degreesToRotate, rotationUnits::deg);
+    }//AdelanteEncoders 
+	</textarea>
+	</pre></code>
+
+	<h2> Retroceder utilizando encoders  </h2>
+	<p> Se configura igual que el anterior, pero cambiando el sentido del motor o motores. </p>
+	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+		//// Retrocede con encoders ///
+void encoatras (float dist,int por)
+    {
+     BI1.resetRotation();
+     BI2.resetRotation();
+     BI3.resetRotation();
+     BD1.resetRotation();
+     BD2.resetRotation();////Los valores de los encoders internos se igualan a 0
+     BD3.resetRotation();
+    
+     double circumference = 10.16 * M_PI; ////se calcula la circunferencia de la llanta  
+     double degreesToRotate = (360 * dist) / circumference;///se calcula los grados de rotación de acuerdo a la distancia que se quiere recorrer
+    
+     BI1.setVelocity(por, vex::velocityUnits::pct); 
+     BI2.setVelocity(por, vex::velocityUnits::pct); 
+     BI3.setVelocity(por, vex::velocityUnits::pct);
+     BD1.setVelocity(por, vex::velocityUnits::pct); 
+     BD2.setVelocity(por, vex::velocityUnits::pct);//se asigna la velocidad a los motores 
+     BD3.setVelocity(por, vex::velocityUnits::pct); 
+        
+      BI1.startRotateFor(-degreesToRotate, vex::rotationUnits::deg); 
+      BI2.startRotateFor(-degreesToRotate, vex::rotationUnits::deg); 
+      BI3.startRotateFor(-degreesToRotate, vex::rotationUnits::deg); 
+      BD1.startRotateFor(-degreesToRotate, vex::rotationUnits::deg);
+      BD2.startRotateFor(-degreesToRotate, vex::rotationUnits::deg);/////comienza a rotar de acuerdo a los grados que han sido calculados
+      BD3.startRotateFor(-degreesToRotate, vex::rotationUnits::deg);
+    }//AtrasEncoders
+	</textarea>
+	</pre></code>
+
+	<h2> Giroscopio y Control PI de velocidad </h2>
+	<p> Se utiliza un giroscopio, para conocer la ubicación del robot y poder realizar un giro exitoso con esa información. A esto se le añade un control Proporcional e Integral en la velocidad de los motores, así conseguir dar un giro exacto y no tener problemas en la rutina autónoma. </p>
+	<pre class="pre1"><code class="adapt">
+	<textarea cols='120' rows='15'>
+		///////////Giro////////////
+                       ///////////Funciones//////////// 
+                                 /// GYRO ////
+void ValoresGyro (){
+        static int ValorA;
+        ValorL= Gyro1.value(vex::rotationUnits::deg);
+        int Cambio= ValorL - ValorA;
+        ValorA= ValorL;
+        if (Cambio > 1800)Cambio -= 3600;
+        if (Cambio < -1800) Cambio+=3600;
+        ValorGyro += Cambio;
+}
+
+int Girar ()
+{
+    while(1)
+    {
+       float Error=0, Velocidad=0;
+       Error=ValorGyro-Grados; 
+       Velocidad= (0.004*Error)+(0.49*Error);
+       if (Velocidad >50) Velocidad=50;
+       if (Velocidad < -50) Velocidad=-50;
+       BD1.spin(directionType::fwd, Velocidad, velocityUnits::pct);  
+       BD2.spin(directionType::fwd, Velocidad, velocityUnits::pct); 
+       BD3.spin(directionType::fwd, Velocidad, velocityUnits::pct); 
+       BI1.spin(directionType::rev, Velocidad, velocityUnits::pct);  
+       BI2.spin(directionType::rev, Velocidad, velocityUnits::pct);
+       BI3.spin(directionType::rev, Velocidad, velocityUnits::pct);
+       vex::task::sleep (1);
+    }
+}
+	</textarea>
+
+
+</pre></code></div>
+</div>
+</body>
+</html>
